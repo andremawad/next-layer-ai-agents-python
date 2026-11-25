@@ -50,3 +50,31 @@ Frontend view: the message list is your app state, each round is a reducer step 
 2. `[user, assistant(tool_calls=[get_time])]` then `+ tool(tool_call_id=call_0, "21:04")`
 3. Round 2 returns plain text, so nothing more is appended: the answer is returned.
 </details>
+
+## Exercise 4: return errors, validate arguments
+
+The loop calls `get_time(**json.loads(...))` directly, so a malformed or unexpected tool call
+crashes the agent. Write a `call_tool(call)` helper that returns errors to the model as text
+instead, and use it in the loop. Make this test pass:
+
+```python
+def test_bad_arguments_are_returned_as_errors(agent):
+    call = SimpleNamespace(function=SimpleNamespace(name="get_time", arguments='{"city": 42}'))
+    assert agent.call_tool(call).startswith("Error:")
+```
+
+<details><summary>Solution</summary>
+
+```python
+def call_tool(call):
+    try:
+        args = json.loads(call.function.arguments)
+        if call.function.name != "get_time" or not isinstance(args.get("city"), str):
+            return f"Error: unexpected tool call {call.function.name}({args})"
+        return get_time(args["city"])
+    except Exception as e:                   # return errors to the model, never crash
+        return f"Error: {e}"
+```
+
+Then in `run`: `result = call_tool(call)`.
+</details>

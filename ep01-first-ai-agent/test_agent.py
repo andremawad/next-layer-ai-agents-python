@@ -69,6 +69,9 @@ def test_loop_stops_after_five_rounds(agent, monkeypatch):
     assert agent.run("loop forever") == "Stopped after 5 tool rounds."
 
 
-def test_bad_arguments_are_returned_as_errors(agent):
-    call = SimpleNamespace(function=SimpleNamespace(name="get_time", arguments='{"city": 42}'))
-    assert agent.call_tool(call).startswith("Error:")
+def test_unknown_city_goes_back_to_the_model_as_a_message(agent, monkeypatch, capsys):
+    fake = FakeLLM(reply(calls=[("get_time", {"city": "Atlantis"})]), reply("I don't know Atlantis."))
+    monkeypatch.setattr(agent, "client", fake)
+    assert agent.run("Time in Atlantis?") == "I don't know Atlantis."
+    assert fake.requests[1]["messages"][-1]["content"] == "Unknown city: Atlantis"
+    assert "tool call: get_time" in capsys.readouterr().out

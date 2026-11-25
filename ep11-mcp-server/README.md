@@ -5,7 +5,7 @@ discovers them at startup. The host still asks a human before anything that isn'
 allowlist, and the server still checks who's asking. Uses the official MCP Python SDK **v2**
 (`MCPServer`; older tutorials call it `FastMCP`, which is the v1 name).
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

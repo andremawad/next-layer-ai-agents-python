@@ -4,7 +4,7 @@ Retrieval-augmented generation from scratch: chunk with overlap, embed, retrieve
 minimum score, answer from numbered sources with citations, and refuse without calling the model
 when nothing matches. No LangChain. The `docs/` folder is a fictional clinic.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

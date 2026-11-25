@@ -4,7 +4,7 @@ A clinic booking agent (fake data) whose risky tool can't run from a model reque
 pending action, and only a human "yes" in your own code runs it, with a one-time token that expires
 and an ownership check. Plain Python, no framework.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

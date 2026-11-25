@@ -4,7 +4,7 @@ An eval harness in plain Python: cases in `cases.jsonl`, code-based graders, k r
 pass@k vs pass^k, a baseline in `baseline.json`, and a gate that exits with code 1 on a regression,
 so it can fail a CI job. The agent under test is the Ep01 time agent.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

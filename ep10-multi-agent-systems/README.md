@@ -6,7 +6,7 @@ from scratch: **routing** (one call picks one specialist, with a safe default) a
 **orchestrator-workers** (a planner splits the task, capped at 4 subtasks, workers answer, a final
 call merges). Plus the **single-agent baseline** you must beat before splitting.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

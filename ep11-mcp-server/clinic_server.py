@@ -15,8 +15,9 @@ from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 
-HOURS = {"sunday": "closed", "saturday": "10:00-14:00"}
-POLICY = "Same-day cancellations cost $50. Cancel the day before and it's free."
+HOURS = {"saturday": "10:00-16:00", "sunday": "closed"}   # Monday to Friday: 09:00-21:00
+POLICY = ("Cancel or move a booking for free up to 24 hours before it starts. "
+          "Later cancellations, including same-day ones, cost $50.")
 
 
 def demo_bookings() -> dict[str, dict]:
@@ -40,7 +41,7 @@ def make_server(bookings: dict[str, dict] | None = None) -> MCPServer:
     @server.tool(annotations=ToolAnnotations(readOnlyHint=True))
     def get_opening_hours(day: str) -> str:
         """Opening hours for one weekday, for example 'sunday'."""
-        return HOURS.get(day.strip().lower(), "09:00-17:00")
+        return HOURS.get(day.strip().lower(), "09:00-21:00")
 
     @server.tool(annotations=ToolAnnotations(readOnlyHint=True))
     def list_bookings() -> dict:

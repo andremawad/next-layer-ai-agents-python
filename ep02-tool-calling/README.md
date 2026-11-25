@@ -3,7 +3,7 @@
 Several tools behind one registry, argument validation against the JSON schema, an error envelope
 the model can recover from, and parallel tool calls. Plain Python, no framework.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

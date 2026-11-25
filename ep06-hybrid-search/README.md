@@ -5,7 +5,7 @@ BM25 keyword search from scratch, cosine vector search, hybrid score fusion with
 [Weaviate's hybrid search](https://docs.weaviate.io/weaviate/concepts/search/hybrid-search)), and
 reciprocal rank fusion.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

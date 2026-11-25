@@ -4,7 +4,7 @@ A tiny vector store in plain Python: normalize on insert (so dot product = cosin
 top-k query with a metadata filter, and save/load to JSON. The demo uses free local embeddings from
 [sentence-transformers](https://www.sbert.net/); no API key.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 

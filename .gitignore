@@ -21,6 +21,7 @@ htmlcov/
 
 # Media (including the audio files the Ep09 demo reads and writes)
 *.wav
+!ep09-voice-agent/question.wav
 *.mp3
 *.mp4
 *.mov

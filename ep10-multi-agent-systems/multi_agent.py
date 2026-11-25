@@ -43,11 +43,12 @@ class Specialist:
 
 SPECIALISTS = {s.name: s for s in [
     Specialist("bookings", "create, move or cancel appointments",
-               "You manage clinic appointments. Ask for any missing date or time."),
+               "You manage clinic appointments, Mon-Fri 9-21, Sat 10-16. Ask for any missing date or time."),
     Specialist("billing", "fees, invoices, insurance coverage",
-               "You answer billing questions for a clinic. Late cancellations cost $50."),
+               "You answer clinic billing questions. Moving or cancelling is free up to 24 hours "
+               "ahead; later than that costs $50."),
     Specialist("faq", "opening hours, location, parking, general questions",
-               "You answer general clinic questions. Open Sun-Thu 9-21, Sat 10-16, closed Fri."),
+               "You answer general clinic questions. Open Mon-Fri 9-21, Sat 10-16, closed on Sundays."),
 ]}
 
 

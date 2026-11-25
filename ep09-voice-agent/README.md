@@ -3,7 +3,7 @@
 One voice turn in plain Python: speech to text, the agent, text to speech, each stage timed
 against a 3-second budget. Small interfaces (`STT`, `TTS`) make every stage swappable and testable.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 
@@ -21,6 +21,24 @@ said:  No, we're closed on Sundays. We're open Saturday from ten to four.
 audio: reply.mp3
 stt 0.58s  llm 1.21s  tts 0.66s | total 2.45s (budget 3.0s)
 ```
+
+## The audio file
+
+`question.wav` is a short sample ("Are you open on Sunday?", generated with a free text-to-speech
+voice), so you can run the demo right away. To ask your own question, record a few seconds of
+speech and save it as a WAV (or MP3/M4A) file:
+
+- **Windows:** the Sound Recorder app, then pass the saved file (it saves `.m4a`, which works too).
+- **macOS:** QuickTime Player > File > New Audio Recording, export, then pass the file.
+- **Linux:** `arecord -d 4 -f cd my-question.wav`
+- **Any OS:** [Audacity](https://www.audacityteam.org/) > record > File > Export > WAV.
+
+```bash
+uv run python voice_agent.py my-question.wav reply.mp3
+```
+
+Keep recordings short (one question), and don't commit your own voice: `.gitignore` skips
+audio files except this sample.
 
 Model names are environment variables (`STT_MODEL`, `TTS_MODEL`, `TTS_VOICE`, `MODEL`) because audio
 models change often. **Check the current OpenAI audio docs before relying on the defaults**: the

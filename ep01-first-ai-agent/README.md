@@ -1,16 +1,17 @@
 # Episode 1: Build your first AI agent in Python (no framework)
 
-A working tool-calling agent in plain Python: one tool (`get_time`), the agent loop, a round
-limit, errors returned to the model, and argument checks. No LangChain or agent framework needed.
+A working tool-calling agent in plain Python, about 40 lines: one tool (`get_time`), the agent
+loop and a round limit. No LangChain or agent framework needed. Exercise 4 adds the error handling
+and argument checks from the video's "three mistakes" section.
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 
 ```bash
 # one-time setup from the repo root: uv sync   (see ../README.md)
 export OPENAI_API_KEY=...        # Windows PowerShell: $env:OPENAI_API_KEY="..."
-uv run python agent.py "What time is it in Tokyo right now?"
+uv run python agent.py
 ```
 
 Example output (your time will differ):

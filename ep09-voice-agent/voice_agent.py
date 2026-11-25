@@ -4,7 +4,7 @@
     set OPENAI_API_KEY, then:  python voice_agent.py question.wav reply.mp3
 
 Model names are environment variables because audio models change often; check your
-provider's current docs (the audio endpoints used here are marked unverified in RESOURCES.md).
+provider's current docs (the audio endpoints used here are marked unverified in the README).
 
 Frontend mental model: a voice turn has a latency budget like a page load has Core Web Vitals.
 Each stage is timed, the same way you'd read a waterfall in the Network tab.
@@ -24,7 +24,9 @@ TTS_MODEL = os.environ.get("TTS_MODEL", "tts-1")
 TTS_VOICE = os.environ.get("TTS_VOICE", "alloy")
 BUDGET_S = 3.0           # target for a whole turn; past this, conversation feels laggy
 SYSTEM = ("You are a clinic receptionist on the phone. Answer in one or two short spoken "
-          "sentences. No lists, no markdown, no emojis: everything you write is read aloud.")
+          "sentences. No lists, no markdown, no emojis: everything you write is read aloud. "
+          "Opening hours: Monday to Friday 9:00 to 21:00, Saturday 10:00 to 16:00, "
+          "closed on Sundays and public holidays.")
 
 
 class STT(Protocol):

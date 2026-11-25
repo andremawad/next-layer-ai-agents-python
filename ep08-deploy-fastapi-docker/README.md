@@ -5,7 +5,7 @@ The agent core (`agent_core.py`, no web framework inside), a thin FastAPI layer 
 stream (`stream_client.js`), and a Dockerfile that follows the
 [FastAPI Docker docs](https://fastapi.tiangolo.com/deployment/docker/).
 
-Video: TBD (the link is added when the episode is published)
+Video: coming soon
 
 Part of the course [AI Engineering: Build Real AI Agents in Python](../README.md) on [Next Layer](https://www.youtube.com/@NextLayerEng).
 
@@ -24,6 +24,15 @@ docker build -t agent-api .
 docker run -p 8000:80 -e OPENAI_API_KEY agent-api
 curl -X POST localhost:8000/chat -H "content-type: application/json" -d '{"message": "Time in Tokyo?"}'
 curl -N -X POST localhost:8000/chat/stream -H "content-type: application/json" -d '{"message": "Say hi"}'
+```
+
+**Windows PowerShell:** `curl` can be an alias for `Invoke-WebRequest` there, so call the real curl
+as `curl.exe` (and escape the inner quotes: `-d '{\"message\": \"Time in Tokyo?\"}'`), or use
+`Invoke-RestMethod`:
+
+```powershell
+Invoke-RestMethod -Method Post -Uri http://localhost:8000/chat -ContentType "application/json" `
+  -Body '{"message": "Time in Tokyo?"}'
 ```
 
 ## Tests (no API key needed)

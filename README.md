@@ -7,11 +7,12 @@ Build real AI agents in plain Python, one working piece per video. No agent fram
 the agent loop, tool calling, safety checks, RAG, search, evals, an API, voice, multi-agent
 patterns and an MCP server yourself, so you understand what frameworks do for you.
 
-Every episode uses the same small, fictional example: a booking assistant for a demo clinic. All data
-in this repo is made up.
+Every episode uses the same small, fictional example: a booking assistant for a demo clinic. Its
+opening hours and cancellation rules are on one fact sheet, [CLINIC.md](CLINIC.md). All data in this
+repo is made up.
 
 - Channel: https://www.youtube.com/@NextLayerEng
-- Course playlist: TBD
+- Course playlist: coming soon
 
 ## Episodes
 
@@ -20,22 +21,22 @@ exercises with solutions, a short quiz, and tests that run without an API key.
 
 | # | Episode | Folder | Video |
 |---|---|---|---|
-| 1 | Build Your First AI Agent in Python (No Framework) | [`ep01-first-ai-agent/`](ep01-first-ai-agent/) | TBD |
-| 2 | Tool Calling Explained: How LLMs Use Your Python Functions | [`ep02-tool-calling/`](ep02-tool-calling/) | TBD |
-| 3 | Stop Your AI Agent From Doing Dangerous Things | [`ep03-agent-safety-confirm/`](ep03-agent-safety-confirm/) | TBD |
-| 4 | RAG in Python: Make an AI Answer From Your Own Documents | [`ep04-rag/`](ep04-rag/) | TBD |
-| 5 | Vector Databases Explained (With a Python Demo) | [`ep05-vector-databases/`](ep05-vector-databases/) | TBD |
-| 6 | Keyword vs Vector vs Hybrid Search: Which One Wins? | [`ep06-hybrid-search/`](ep06-hybrid-search/) | TBD |
-| 7 | Test Your AI Agent Like Real Software (Evals in Python) | [`ep07-evals/`](ep07-evals/) | TBD |
-| 8 | Deploy a Python AI Agent as an API (FastAPI + Docker) | [`ep08-deploy-fastapi-docker/`](ep08-deploy-fastapi-docker/) | TBD |
-| 9 | Give Your AI Agent a Voice (Speech to Text + Text to Speech) | [`ep09-voice-agent/`](ep09-voice-agent/) | TBD |
-| 10 | Multi-Agent Systems: When One Agent Isn't Enough | [`ep10-multi-agent-systems/`](ep10-multi-agent-systems/) | TBD |
-| 11 | MCP Explained: Build an MCP Server in Python for Your AI Agent | [`ep11-mcp-server/`](ep11-mcp-server/) | TBD |
+| 1 | Build Your First AI Agent in Python (No Framework) | [`ep01-first-ai-agent/`](ep01-first-ai-agent/) | coming soon |
+| 2 | Tool Calling Explained: How LLMs Use Your Python Functions | [`ep02-tool-calling/`](ep02-tool-calling/) | coming soon |
+| 3 | Stop Your AI Agent From Doing Dangerous Things | [`ep03-agent-safety-confirm/`](ep03-agent-safety-confirm/) | coming soon |
+| 4 | RAG in Python: Make an AI Answer From Your Own Documents | [`ep04-rag/`](ep04-rag/) | coming soon |
+| 5 | Vector Databases Explained (With a Python Demo) | [`ep05-vector-databases/`](ep05-vector-databases/) | coming soon |
+| 6 | Keyword vs Vector vs Hybrid Search: Which One Wins? | [`ep06-hybrid-search/`](ep06-hybrid-search/) | coming soon |
+| 7 | Test Your AI Agent Like Real Software (Evals in Python) | [`ep07-evals/`](ep07-evals/) | coming soon |
+| 8 | Deploy a Python AI Agent as an API (FastAPI + Docker) | [`ep08-deploy-fastapi-docker/`](ep08-deploy-fastapi-docker/) | coming soon |
+| 9 | Give Your AI Agent a Voice (Speech to Text + Text to Speech) | [`ep09-voice-agent/`](ep09-voice-agent/) | coming soon |
+| 10 | Multi-Agent Systems: When One Agent Isn't Enough | [`ep10-multi-agent-systems/`](ep10-multi-agent-systems/) | coming soon |
+| 11 | MCP Explained: Build an MCP Server in Python for Your AI Agent | [`ep11-mcp-server/`](ep11-mcp-server/) | coming soon |
 
 ## Prerequisites
 
 - Basic Python: functions, dicts, lists, classes.
-- Python 3.11 or newer.
+- Python 3.11 or newer (3.12 is the default, pinned in `.python-version`; uv installs it for you).
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended) or pip.
 - An OpenAI API key for the live demos (see below). Episodes 5 and 6 run on free local models,
   and **all the tests run without any key**.
@@ -71,6 +72,17 @@ pytest
 
 With pip, drop `uv run` from the commands in the episode READMEs (`python agent.py` instead of
 `uv run python agent.py`).
+
+### Videos use pip, this repo uses uv
+
+The videos show plain `pip` and `python` so they work anywhere. With uv, the same steps are:
+
+| In the video | With uv in this repo |
+|---|---|
+| `pip install openai tzdata` | `uv sync` (once, from the repo root; installs everything) |
+| `pip install sentence-transformers` | `uv sync --group local-embeddings` |
+| `python agent.py` | `uv run python agent.py` |
+| `pytest -q` | `uv run pytest -q` |
 
 ### Your API key
 
