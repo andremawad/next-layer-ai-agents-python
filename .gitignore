@@ -20,13 +20,25 @@ dist/
 htmlcov/
 
 # Media (including the audio files the Ep09 demo reads and writes)
-*.wav
-!ep09-voice-agent/question.wav
-*.mp3
 *.mp4
 *.mov
+*.mkv
+*.webm
+*.mp3
 *.m4a
+*.wav
 *.srt
+*.vtt
+!ep09-voice-agent/question.wav
+
+# Video production files (never part of this repo)
+renders/
+out/
+voice/
+slides/
+.tts-cache/
+publish/
+script.md
 
 # Editors / OS
 .vscode/
