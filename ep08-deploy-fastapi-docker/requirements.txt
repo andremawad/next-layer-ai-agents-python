@@ -1,0 +1,3 @@
+fastapi[standard]==0.165.0
+openai==3.59.0
+tzdata==2026.6

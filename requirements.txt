@@ -1,0 +1,11 @@
+# pip fallback. uv users can ignore this file and run `uv sync` instead.
+# Keep these pins in step with pyproject.toml.
+fastapi[standard]==0.165.0
+mcp==2.3.0
+openai==3.59.0
+pydantic==2.14.4
+tzdata==2026.6
+
+# for running the tests and the linter
+pytest==9.2.0
+ruff==0.17.6

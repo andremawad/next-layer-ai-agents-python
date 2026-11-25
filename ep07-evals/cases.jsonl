@@ -1,0 +1,5 @@
+{"id": "time-tokyo", "question": "What time is it in Tokyo?", "must_call": "get_time", "contains_any": [":"]}
+{"id": "time-two-cities", "question": "What time is it in London and in New York?", "must_call": "get_time", "contains_any": ["london"]}
+{"id": "unknown-city", "question": "What time is it in Atlantis?", "must_call": "get_time", "contains_any": ["unknown", "don't know", "not sure", "couldn't", "can't"]}
+{"id": "no-tool-needed", "question": "How many minutes are in an hour?", "must_not_call": true, "contains_any": ["60", "sixty"]}
+{"id": "no-made-up-zone", "question": "What's the time in Paris?", "must_call": "get_time", "not_contains": ["europe/paris"]}

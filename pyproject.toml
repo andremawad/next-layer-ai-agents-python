@@ -1,0 +1,52 @@
+[project]
+name = "next-layer-ai-agents-python"
+version = "0.1.0"
+description = "Code for the Next Layer course 'AI Engineering: Build Real AI Agents in Python'"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[standard]==0.165.0",
+    "mcp==2.3.0",
+    "openai==3.59.0",
+    "pydantic==2.14.4",
+    "tzdata==2026.6",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "ruff==0.17.6",
+]
+# Episodes 5 and 6 only: free local embeddings (large download, pulls in PyTorch).
+local-embeddings = [
+    "sentence-transformers==6.3.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["ep01-first-ai-agent", "ep02-tool-calling", "ep03-agent-safety-confirm", "ep04-rag",
+             "ep05-vector-databases", "ep06-hybrid-search", "ep07-evals",
+             "ep08-deploy-fastapi-docker", "ep09-voice-agent", "ep10-multi-agent-systems",
+             "ep11-mcp-server"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+# The code matches what is shown in the videos, so a few style rules are relaxed:
+# B008: FastAPI's Depends() in defaults is the documented pattern.
+# B905: zip() over equal-length lists is fine for teaching code.
+# E731: small lambdas in tests read better than one-line defs.
+ignore = ["B008", "B905", "E731"]
+
+[tool.ruff.lint.isort]
+# Each episode folder is a flat set of scripts; treat their modules as first-party.
+known-first-party = ["agent", "tools_agent", "safe_agent", "rag", "vector_store", "hybrid_search",
+                     "evals", "agent_core", "app", "voice_agent", "multi_agent", "clinic_server",
+                     "mcp_agent"]

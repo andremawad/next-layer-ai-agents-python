@@ -1,0 +1,3 @@
+# Episodes 5 and 6 only (pip fallback for `uv sync --group local-embeddings`).
+# Large download: it pulls in PyTorch. The tests do not need it.
+sentence-transformers==6.3.0
