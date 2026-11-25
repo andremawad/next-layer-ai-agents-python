@@ -47,7 +47,7 @@ exercises with solutions, a short quiz, and tests that run without an API key.
 ### With uv (recommended)
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/andremawad/next-layer-ai-agents-python.git
 cd next-layer-ai-agents-python
 uv sync                       # creates .venv and installs the pinned dependencies
 uv run pytest                 # every episode's tests, no API key needed
